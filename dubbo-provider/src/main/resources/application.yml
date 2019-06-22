@@ -1,0 +1,43 @@
+spring:
+  dubbo:
+    application:
+      name: dubbo-provider
+  servlet:
+    multipart:
+      maxFileSize: 100MB
+      maxRequestSize: 100MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /dubbo-provider
+    session:
+      timeout: 14400s
+
+quartz:
+  scheduler:
+    instance-name: quartzScheduler
+    instance-id: NON_CLUSTERED
+    skip-update-check: true
+    job-factory:
+      class: org.quartz.simpl.SimpleJobFactory
+  job-store:
+    class: org.quartz.impl.jdbcjobstore.JobStoreTX
+    driver-delegate-class: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+    datasource: quartzDataSource
+    table-prefix: qrtz_
+    is-clustered: false
+  thread-pool:
+    class: org.quartz.simpl.SimpleThreadPool
+    thread-count: 15
+  datasource:
+    quartzDataSource:
+      driver: ${spring.datasource.dubbo-provider.driverClassName}
+      url: ${spring.datasource.dubbo-provider.jdbc-url}
+      user: ${spring.datasource.dubbo-provider.username}
+      password: ${spring.datasource.dubbo-provider.password}
+      maxConnections: 5

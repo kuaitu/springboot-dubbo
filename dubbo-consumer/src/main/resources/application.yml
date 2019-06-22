@@ -1,0 +1,22 @@
+spring:
+  dubbo:
+    application:
+      name: dubbo-consumer
+  servlet:
+    multipart:
+      maxFileSize: 100MB
+      maxRequestSize: 100MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    context-path: /dubbo-consumer
+    session:
+      timeout: 14400s
+
+swagger:
+  enable: true

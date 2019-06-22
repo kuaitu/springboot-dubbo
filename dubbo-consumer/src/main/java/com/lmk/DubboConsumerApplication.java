@@ -1,4 +1,4 @@
-package com.lmk.dubboconsumer;
+package com.lmk;
 
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
