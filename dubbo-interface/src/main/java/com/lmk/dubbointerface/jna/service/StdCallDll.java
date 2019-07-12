@@ -1,4 +1,4 @@
-package com.lmk.dubboprovider.jna;
+package com.lmk.dubbointerface.jna.service;
 
 import com.sun.jna.Native;
 import com.sun.jna.Platform;

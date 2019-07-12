@@ -1,7 +1,7 @@
-package com.lmk.dubboprovider.service.impl;
+package com.lmk.dubboprovider.hello.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.lmk.dubbointerface.service.HelloService;
+import com.lmk.dubbointerface.hello.service.HelloService;
 import org.springframework.stereotype.Component;
 
 @Component
